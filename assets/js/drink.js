@@ -1,8 +1,11 @@
+var savedDrinks = [];
+
 var drinkImageEl = document.querySelector("#drink-image");
 var drinkNameEl = document.querySelector("#drink-name");
 var drinkGlassEl = document.querySelector("#drink-glass");
 var ingredientListEl = document.querySelector("#ingredient-list");
 var instructionsEl = document.querySelector("#drink-instructions");
+var favBtn = document.querySelector("#fav-btn");
 
 var getDrinkId = function() {
     // assign variable for string query
@@ -111,8 +114,35 @@ var displayDrink = function(data) {
         ingredientListEl.appendChild(listItemEl);
     }
 
+    favBtn.className = "button is-info is-outlined mt-5";
+    favBtn.textContent = "Save Drink";
+
     instructionsEl.textContent = data.drinks[0].strInstructions;
 
 };
 
+var loadSavedDrinks = function() {
+    savedDrinks = JSON.parse(localStorage.getItem("savedDrinks"));
+
+    if (!savedDrinks) {
+        savedDrinks = [];
+    }
+};
+
+var saveDrink = function(id) {
+    savedDrinks.push(id);
+    localStorage.setItem("savedDrinks", JSON.stringify(savedDrinks));
+    favBtn.textContent = "Drink Saved";
+};
+
+favBtn.addEventListener("click", function() {
+    // assign variable for string query
+    var queryString = document.location.search;
+    // pull id from queryString
+    var id = queryString.split("=")[1];
+
+    saveDrink(id);
+});
+
 getDrinkId();
+loadSavedDrinks();
