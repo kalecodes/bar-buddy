@@ -10,11 +10,11 @@
 </head>
 <body>
     <header>
-        <nav class="navbar">
+        <nav class="navbar px-3">
             <div class="navbar-brand">
                 <h1 class="navbar-item title is-2">Bar Buddy</h1>
             </div>
-            <div class="navbar-menu pr-3">
+            <div class="navbar-menu">
                 <div class="navbar-end">
                     <a class="navbar-item" href="./index.html">Home</a>
                     <a class="navbar-item" href="./saved.html">Saved Recipes</a>
@@ -26,18 +26,18 @@
     <main class="">
         <section class="">
             <h3 class="has-text-centered is-size-3 has-text-weight-semi-bold">Welcome to Bar Buddy!</h3>
-            <p class="has-text-centered my-3">We are here to help you on your bartending journey. <br/> Search by liquor type or drink name to view recipes, photos, and videos of over 600 drink recipes. <br/> Save your favorites to be reveiwed any time!</p>
+            <p class="has-text-centered my-3">Here to help you on your bartending journey. <br/> Search by liquor type or drink name to view recipes, photos, and videos of over 600 drink recipes. <br/> Save your favorites to be reveiwed at any time!</p>
         </section>
         <section class="my-5">
             <div class="columns is-justify-content-space-evenly">
                 <div class="column is-two-fifths">
-                    <label class="label has-text-centered">Search by Alcohol Type:</label>
+                    <label class="label has-text-centered">Search by Ingredient:</label>
                     <div class="field has-addons is-justify-content-center">
                         <div class="control">
-                            <input class="input" type="text" placeholder="Tequila">
+                            <input id="ingredient-input"class="input" type="text" placeholder="Tequila">
                         </div>
                         <div class="control">
-                            <button class="button">Search</button>
+                            <button id="search-by-ingredient-btn" type="submit" class="button">Search</button>
                         </div>
                     </div>
                 </div>
@@ -45,10 +45,10 @@
                     <label class="label has-text-centered">Search by Drink Name:</label>
                     <div class="field has-addons is-justify-content-center">
                         <div class="control">
-                            <input class="input" type="text" placeholder="Gin Fizz">
+                            <input id="name-input" class="input" type="text" placeholder="Fizz">
                         </div>
                         <div class="control">
-                            <button class="button">Search</button>
+                            <button id="search-by-name-btn" type="submit" class="button">Search</button>
                         </div>
                     </div>
                 </div>

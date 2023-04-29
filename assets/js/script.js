@@ -1,3 +1,7 @@
+var searchByNameBtnEl = document.querySelector("#search-by-name-btn");
+var nameInputEl = document.querySelector("#name-input");
+var searchByIngredientEl = document.querySelector("#search-by-ingredient-btn");
+var ingredientInputEl = document.querySelector("#ingredient-input");
 var drinkListEl = document.querySelector("#drink-list");
 
 var getDrinksByIngredient = function(ingredient) {
@@ -78,8 +82,18 @@ var displayDrinks = function(data) {
 }
 
 
+searchByIngredientEl.addEventListener("click", function() {
+    var ingredient = ingredientInputEl.value.trim();
+    ingredientInputEl.value = "";
+    getDrinksByIngredient(ingredient);
+})
+
+searchByNameBtnEl.addEventListener("click", function() {
+    var name = nameInputEl.value.trim();
+    nameInputEl.value = "";
+    getDrinksByName(name);
+})
 
 
-
-getDrinksByIngredient("Gin");
+// getDrinksByIngredient("Gin");
 // getDrinksByName("Margarita");
