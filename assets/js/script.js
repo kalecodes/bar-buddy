@@ -55,9 +55,13 @@ var displayDrinks = function(data) {
         cardImageFigureEl.className = "image";
         cardImageDivEl.appendChild(cardImageFigureEl);
 
+        var cardImageLinkEl = document.createElement("a");
+        cardImageLinkEl.setAttribute("href", "./drink.html?=" + data.drinks[i].idDrink);
+        cardImageFigureEl.appendChild(cardImageLinkEl);
+
         var cardImageEl = document.createElement("img");
         cardImageEl.setAttribute("src", data.drinks[i].strDrinkThumb);
-        cardImageFigureEl.appendChild(cardImageEl);
+        cardImageLinkEl.appendChild(cardImageEl);
 
         var cardInfoEl = document.createElement("div");
         cardInfoEl.className = "card-content";
@@ -93,7 +97,3 @@ searchByNameBtnEl.addEventListener("click", function() {
     nameInputEl.value = "";
     getDrinksByName(name);
 })
-
-
-// getDrinksByIngredient("Gin");
-// getDrinksByName("Margarita");
