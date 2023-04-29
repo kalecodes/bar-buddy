@@ -12,9 +12,9 @@
     <header>
         <nav class="navbar">
             <div class="navbar-brand">
-                <h1 class="navbar-item">Bar Buddy</h1>
+                <h1 class="navbar-item title is-2">Bar Buddy</h1>
             </div>
-            <div class="navbar-menu">
+            <div class="navbar-menu pr-3">
                 <div class="navbar-end">
                     <a class="navbar-item" href="./index.html">Home</a>
                     <a class="navbar-item" href="./saved.html">Saved Recipes</a>
@@ -25,24 +25,30 @@
 
     <main class="">
         <section class="">
-            <h3>Welcome to Bar Buddy!</h3>
-            <p>We are here to help you on your bartending journey. Search by liquor type or drink name to view recipes, photos, and videos of over 600 drink recipes. Save your favorites to be reveiwed any time!</p>
+            <h3 class="has-text-centered is-size-3 has-text-weight-semi-bold">Welcome to Bar Buddy!</h3>
+            <p class="has-text-centered my-3">We are here to help you on your bartending journey. <br/> Search by liquor type or drink name to view recipes, photos, and videos of over 600 drink recipes. <br/> Save your favorites to be reveiwed any time!</p>
         </section>
-        <section class="">
-            <div class="columns">
-                <div class="column">
-                    <div class="field">
-                        <label class="label">Search by Alcohol Type:</label>
+        <section class="my-5">
+            <div class="columns is-justify-content-space-evenly">
+                <div class="column is-two-fifths">
+                    <label class="label has-text-centered">Search by Alcohol Type:</label>
+                    <div class="field has-addons is-justify-content-center">
                         <div class="control">
                             <input class="input" type="text" placeholder="Tequila">
                         </div>
+                        <div class="control">
+                            <button class="button">Search</button>
+                        </div>
                     </div>
                 </div>
-                <div class="column">
-                    <div class="field">
-                        <label class="label">Search by Drink Name:</label>
+                <div class="column is-two-fifths">
+                    <label class="label has-text-centered">Search by Drink Name:</label>
+                    <div class="field has-addons is-justify-content-center">
                         <div class="control">
                             <input class="input" type="text" placeholder="Gin Fizz">
+                        </div>
+                        <div class="control">
+                            <button class="button">Search</button>
                         </div>
                     </div>
                 </div>

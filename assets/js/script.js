@@ -7,7 +7,7 @@ var getDrinksByIngredient = function(ingredient) {
         if (response.ok) {
             response.json().then(function(data) {
                 console.log(data);
-                // displayDrinks(data);
+                displayDrinks(data);
             });
         } else {
             console.log("Unable to find ingredient")
@@ -81,5 +81,5 @@ var displayDrinks = function(data) {
 
 
 
-// getDrinksByIngredient("Vodka");
-getDrinksByName("Margarita");
+getDrinksByIngredient("Gin");
+// getDrinksByName("Margarita");
