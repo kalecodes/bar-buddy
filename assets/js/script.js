@@ -1,8 +1,27 @@
+var randomBtnEl = document.querySelector("#random-btn");
 var searchByNameBtnEl = document.querySelector("#search-by-name-btn");
 var nameInputEl = document.querySelector("#name-input");
 var searchByIngredientEl = document.querySelector("#search-by-ingredient-btn");
 var ingredientInputEl = document.querySelector("#ingredient-input");
 var drinkListEl = document.querySelector("#drink-list");
+
+var getRandomDrink = function() {
+    var apiUrl = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
+
+    fetch(apiUrl).then(function(response) {
+        if (response.ok) {
+            response.json().then(function(data) {
+                console.log(data);
+                document.location.replace("./drink.html?=" + data.drinks[0].idDrink);
+            });
+        } else {
+            console.log("Unable to find a random drink")
+        }
+    })
+    .catch(function(error) {
+        "Unable to connect to thecocktailDB server"
+    });
+};
 
 var getDrinksByIngredient = function(ingredient) {
     var apiUrl = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + ingredient;
@@ -85,15 +104,18 @@ var displayDrinks = function(data) {
     }
 }
 
+randomBtnEl.addEventListener("click", function() {
+    getRandomDrink();
+});
 
 searchByIngredientEl.addEventListener("click", function() {
     var ingredient = ingredientInputEl.value.trim();
     ingredientInputEl.value = "";
     getDrinksByIngredient(ingredient);
-})
+});
 
 searchByNameBtnEl.addEventListener("click", function() {
     var name = nameInputEl.value.trim();
     nameInputEl.value = "";
     getDrinksByName(name);
-})
+});
