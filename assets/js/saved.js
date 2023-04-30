@@ -6,7 +6,13 @@ var loadSavedDrinks = function() {
     savedDrinks = JSON.parse(localStorage.getItem("savedDrinks"));
 
     if (!savedDrinks) {
+        var noSavesMsgEl = document.createElement("p");
+        noSavesMsgEl.className = "column title has-text-centered mt-5";
+        noSavesMsgEl.textContent = "You don't have any saved drinks yet!"
+        savedListEl.appendChild(noSavesMsgEl);
+
         savedDrinks = [];
+        return
     }
 
     fetchDrinks();
