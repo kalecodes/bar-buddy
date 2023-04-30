@@ -35,83 +35,161 @@ var getDrink = function(id) {
 };
 
 var displayDrink = function(data) {
+    console.log(data);
     drinkImageEl.setAttribute("src", data.drinks[0].strDrinkThumb);
     drinkNameEl.textContent = data.drinks[0].strDrink;
     drinkGlassEl.textContent = data.drinks[0].strGlass;
 
+    var measurement = "";
+
     if (data.drinks[0].strIngredient1) {
         var listItemEl = document.createElement("li");
-        listItemEl.textContent = data.drinks[0].strMeasure1 + " " + data.drinks[0].strIngredient1;
+        if (data.drinks[0].strMeasure1) {
+            measurement = data.drinks[0].strMeasure1;
+        } else {
+            measurement = "";
+        }
+        listItemEl.textContent = measurement + " " + data.drinks[0].strIngredient1;
         ingredientListEl.appendChild(listItemEl);
     }
     if (data.drinks[0].strIngredient2) {
         var listItemEl = document.createElement("li");
-        listItemEl.textContent = data.drinks[0].strMeasure2 + " " + data.drinks[0].strIngredient2;
+        if (data.drinks[0].strMeasure2) {
+            measurement = data.drinks[0].strMeasure2;
+        } else {
+            measurement = "";
+        }
+        listItemEl.textContent = measurement + " " + data.drinks[0].strIngredient2;
         ingredientListEl.appendChild(listItemEl);
     }
     if (data.drinks[0].strIngredient3) {
         var listItemEl = document.createElement("li");
-        listItemEl.textContent = data.drinks[0].strMeasure3 + " " + data.drinks[0].strIngredient3;
+        if (data.drinks[0].strMeasure3) {
+            measurement = data.drinks[0].strMeasure3;
+        } else {
+            measurement = "";
+        }
+        listItemEl.textContent = measurement + " " + data.drinks[0].strIngredient3;
         ingredientListEl.appendChild(listItemEl);
     }
     if (data.drinks[0].strIngredient4) {
         var listItemEl = document.createElement("li");
-        listItemEl.textContent = data.drinks[0].strMeasure4 + " " + data.drinks[0].strIngredient4;
+        if (data.drinks[0].strMeasure4) {
+            measurement = data.drinks[0].strMeasure4;
+        } else {
+            measurement = "";
+        }
+        listItemEl.textContent = measurement + " " + data.drinks[0].strIngredient4;
         ingredientListEl.appendChild(listItemEl);
     }
     if (data.drinks[0].strIngredient5) {
         var listItemEl = document.createElement("li");
-        listItemEl.textContent = data.drinks[0].strMeasure5 + " " + data.drinks[0].strIngredient5;
+        if (data.drinks[0].strMeasure5) {
+            measurement = data.drinks[0].strMeasure5;
+        } else {
+            measurement = "";
+        }
+        listItemEl.textContent = measurement + " " + data.drinks[0].strIngredient5;
         ingredientListEl.appendChild(listItemEl);
     }
     if (data.drinks[0].strIngredient6) {
         var listItemEl = document.createElement("li");
-        listItemEl.textContent = data.drinks[0].strMeasure6 + " " + data.drinks[0].strIngredient6;
+        if (data.drinks[0].strMeasure6) {
+            measurement = data.drinks[0].strMeasure6;
+        } else {
+            measurement = "";
+        }
+        listItemEl.textContent = measurement + " " + data.drinks[0].strIngredient6;
         ingredientListEl.appendChild(listItemEl);
     }
     if (data.drinks[0].strIngredient7) {
         var listItemEl = document.createElement("li");
-        listItemEl.textContent = data.drinks[0].strMeasure7 + " " + data.drinks[0].strIngredient7;
+        if (data.drinks[0].strMeasure7) {
+            measurement = data.drinks[0].strMeasure7;
+        } else {
+            measurement = "";
+        }
+        listItemEl.textContent = measurement + " " + data.drinks[0].strIngredient7;
         ingredientListEl.appendChild(listItemEl);
     }
     if (data.drinks[0].strIngredient8) {
         var listItemEl = document.createElement("li");
-        listItemEl.textContent = data.drinks[0].strMeasure8 + " " + data.drinks[0].strIngredient8;
+        if (data.drinks[0].strMeasure8) {
+            measurement = data.drinks[0].strMeasure8;
+        } else {
+            measurement = "";
+        }
+        listItemEl.textContent = measurement + " " + data.drinks[0].strIngredient8;
         ingredientListEl.appendChild(listItemEl);
     }
     if (data.drinks[0].strIngredient9) {
         var listItemEl = document.createElement("li");
-        listItemEl.textContent = data.drinks[0].strMeasure9 + " " + data.drinks[0].strIngredient9;
+        if (data.drinks[0].strMeasure9) {
+            measurement = data.drinks[0].strMeasure9;
+        } else {
+            measurement = "";
+        }
+        listItemEl.textContent = measurement + " " + data.drinks[0].strIngredient9;
         ingredientListEl.appendChild(listItemEl);
     }
     if (data.drinks[0].strIngredient10) {
         var listItemEl = document.createElement("li");
-        listItemEl.textContent = data.drinks[0].strMeasure10 + " " + data.drinks[0].strIngredient10;
+        if (data.drinks[0].strMeasure10) {
+            measurement = data.drinks[0].strMeasure10;
+        } else {
+            measurement = "";
+        }
+        listItemEl.textContent = measurement + " " + data.drinks[0].strIngredient10;
         ingredientListEl.appendChild(listItemEl);
     }
     if (data.drinks[0].strIngredient11) {
         var listItemEl = document.createElement("li");
-        listItemEl.textContent = data.drinks[0].strMeasure11 + " " + data.drinks[0].strIngredient11;
+        if (data.drinks[0].strMeasure11) {
+            measurement = data.drinks[0].strMeasure11;
+        } else {
+            measurement = "";
+        }
+        listItemEl.textContent = measurement + " " + data.drinks[0].strIngredient11;
         ingredientListEl.appendChild(listItemEl);
     }
     if (data.drinks[0].strIngredient12) {
         var listItemEl = document.createElement("li");
-        listItemEl.textContent = data.drinks[0].strMeasure12 + " " + data.drinks[0].strIngredient12;
+        if (data.drinks[0].strMeasure12) {
+            measurement = data.drinks[0].strMeasure12;
+        } else {
+            measurement = "";
+        }
+        listItemEl.textContent = measurement + " " + data.drinks[0].strIngredient12;
         ingredientListEl.appendChild(listItemEl);
     }
     if (data.drinks[0].strIngredient13) {
         var listItemEl = document.createElement("li");
-        listItemEl.textContent = data.drinks[0].strMeasure13 + " " + data.drinks[0].strIngredient13;
+        if (data.drinks[0].strMeasure13) {
+            measurement = data.drinks[0].strMeasure13;
+        } else {
+            measurement = "";
+        }
+        listItemEl.textContent = measurement + " " + data.drinks[0].strIngredient13;
         ingredientListEl.appendChild(listItemEl);
     }
     if (data.drinks[0].strIngredient14) {
         var listItemEl = document.createElement("li");
-        listItemEl.textContent = data.drinks[0].strMeasure14 + " " + data.drinks[0].strIngredient14;
+        if (data.drinks[0].strMeasure14) {
+            measurement = data.drinks[0].strMeasure14;
+        } else {
+            measurement = "";
+        }
+        listItemEl.textContent = measurement + " " + data.drinks[0].strIngredient14;
         ingredientListEl.appendChild(listItemEl);
     }
     if (data.drinks[0].strIngredient15) {
         var listItemEl = document.createElement("li");
-        listItemEl.textContent = data.drinks[0].strMeasure15 + " " + data.drinks[0].strIngredient15;
+        if (data.drinks[0].strMeasure15) {
+            measurement = data.drinks[0].strMeasure15;
+        } else {
+            measurement = "";
+        }
+        listItemEl.textContent = measurement + " " + data.drinks[0].strIngredient15;
         ingredientListEl.appendChild(listItemEl);
     }
 
