@@ -6,8 +6,8 @@ A search tool for cocktail lovers and bartenders to find and learn how to make n
 
 ## Purpose/User Story
 
-AS A bartender or cocktail-lover
-I WANT to learn new cocktail recipes
+AS A bartender or cocktail-lover\
+I WANT to learn new cocktail recipes\
 SO THAT I can expand my cocktail knowledge
 
 ## Application Details
