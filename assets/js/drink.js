@@ -7,13 +7,14 @@ var ingredientListEl = document.querySelector("#ingredient-list");
 var instructionsEl = document.querySelector("#drink-instructions");
 var favBtn = document.querySelector("#fav-btn");
 
+var videosSectionEl = document.querySelector("#videos");
+
 var getDrinkId = function() {
     // assign variable for string query
     var queryString = document.location.search;
     // pull id from queryString
     var id = queryString.split("=")[1];
 
-    console.log(id);
     getDrink(id);
 };
 
@@ -23,8 +24,8 @@ var getDrink = function(id) {
     fetch(apiUrl).then(function(response) {
         if (response.ok) {
             response.json().then(function(data) {
-                console.log(data);
                 displayDrink(data);
+                findVideos(data);
             });
         }
     })
@@ -119,6 +120,32 @@ var displayDrink = function(data) {
 
     instructionsEl.textContent = data.drinks[0].strInstructions;
 
+};
+
+var findVideos = function(data) {
+    var keyword = data.drinks[0].strDrink;
+
+    var apiUrl = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=3&q=" + keyword + "&type=video&key=AIzaSyCQT3bz69qAU0l8kpY8e2YGz18FpSBqOpU";
+
+    fetch(apiUrl).then(function(response) {
+        if (response.ok) {
+            response.json().then(function(data) {
+                insertVideos(data, keyword);
+            })
+        } else {
+            console.log("Unable to find a video from youtube")    
+        }
+    })
+    .catch(function(error) {
+        console.log("Unable to connect to Youtube Server");
+    })
+};
+
+var insertVideos = function(data, keyword) {
+    videosSectionEl.innerHTML += '<p class="title">Showing Videos For: ' + keyword + '</p>'
+    for (var i = 0; i < data.items.length; i++) {
+        videosSectionEl.innerHTML += '<iframe id="ytplayer" class="my-3" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/' +  data.items[i].id.videoId + '" frameborder="0"></iframe>'
+    }
 };
 
 var loadSavedDrinks = function() {

@@ -70,8 +70,7 @@ var displayDrink = function(data) {
     }
     cardInfoEl.appendChild(cardDrinkCategoryEl);
 
-    savedListEl.appendChild(cardEl);    
-    debugger;
+    savedListEl.appendChild(cardEl); 
 };
 
 loadSavedDrinks();
