@@ -125,7 +125,7 @@ var displayDrink = function(data) {
 var findVideos = function(data) {
     var keyword = data.drinks[0].strDrink;
 
-    var apiUrl = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=3&q=how+to+make+a+" + keyword + "&type=video&key=AIzaSyCQT3bz69qAU0l8kpY8e2YGz18FpSBqOpU";
+    var apiUrl = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=3&q=how+to+make+a+" + keyword + "+cocktail&type=video&key=AIzaSyCQT3bz69qAU0l8kpY8e2YGz18FpSBqOpU";
 
     fetch(apiUrl).then(function(response) {
         if (response.ok) {
